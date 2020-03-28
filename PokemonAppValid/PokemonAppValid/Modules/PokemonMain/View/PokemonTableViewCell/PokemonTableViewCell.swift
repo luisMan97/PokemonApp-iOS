@@ -13,7 +13,6 @@ class PokemonTableViewCell: UITableViewCell {
     // IBOutlets
     @IBOutlet weak var pokemonNameLabel: UILabel!
     @IBOutlet weak var pokemonIDLabel: UILabel!
-    //@IBOutlet weak var emailNameLabel: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
     
     //var tapViewPostsAction : ((UITableViewCell) -> ())?
@@ -32,25 +31,17 @@ class PokemonTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    // IBActions
-    
-    /*@IBAction func viewPostsAction() {
-     tapViewPostsAction?(self)
-     }*/
-    
     // MARK: - Private Methods
     
     private func setup() {
         pokemonNameLabel.text = pokemon?.name
         pokemonIDLabel.text = "\(pokemon?.id ?? 0)"
-        //emailNameLabel.text = pokemon?.email
         
         if let frontDefault = pokemon?.sprite?.frontDefault {
             pokemonImage.downloaded(from: frontDefault, onComplete: nil)
-        }
-        /*if let id = pokemon?.id {
+        } else if let id = pokemon?.id {
             pokemonImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(id).png", onComplete: nil)
-        }*/
+        }
     }
     
 }
