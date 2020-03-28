@@ -102,14 +102,12 @@ class PokemonDetailViewController: UIViewController {
     
     private func getImage() {
         KVNProgress.show()
-        /*if let frontDefault = viewModel.pokemon?.sprite?.frontDefault {
-            pokemonImage.downloaded(from: frontDefault) { success in
-                KVNProgress.dismiss()
-            }
-        }*/
-        
         if let id = viewModel.pokemon?.id {
             pokemonImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(id).png") { success in
+                KVNProgress.dismiss()
+            }
+        } else if let frontDefault = viewModel.pokemon?.sprite?.frontDefault {
+            pokemonImage.downloaded(from: frontDefault) { success in
                 KVNProgress.dismiss()
             }
         }
@@ -164,9 +162,7 @@ class PokemonDetailViewController: UIViewController {
     }
 
     private func getAbilities() {
-        //KVNProgress.show()
         viewModel.getAbilities() { [weak self] (success, error) in
-            //KVNProgress.dismiss()
             guard let strongSelf = self else { return }
             
             if let error = error {
