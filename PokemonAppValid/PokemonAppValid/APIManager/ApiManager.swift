@@ -15,9 +15,7 @@ class ApiManager {
         Alamofire.request(service)
             .responseJSON { response in
                 switch response.result {
-                case .success(let value):
-                    //print("value: ", value)
-                   
+                case .success(let value):                 
                     if response.response?.statusCode == 404 {
                         let error = NSError(domain: "error", code: 404, userInfo: [NSLocalizedDescriptionKey: "404 error"])
                         withCompletionBlock?(nil, error)
@@ -42,8 +40,6 @@ class ApiManager {
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    print("value: ", value)
-                   
                     if response.response?.statusCode == 404 {
                         let error = NSError(domain: "error", code: 404, userInfo: [NSLocalizedDescriptionKey: "404 error"])
                         withCompletionBlock?(nil, error)
