@@ -21,7 +21,6 @@ extension StatsViewController: UITableViewDataSource {
        
         cell.selectionStyle = .none
         cell.textLabel?.text = viewModel.stats?[indexPath.row].stat?.name
-        //cell.detailTextLabel?.text = viewModel.stats?.stat[indexPath.row]?.
 
         return cell
     }
