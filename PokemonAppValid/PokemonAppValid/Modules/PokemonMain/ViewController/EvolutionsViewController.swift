@@ -98,7 +98,6 @@ class EvolutionsViewController: UIViewController {
             var fileArray = url.components(separatedBy: "/")
             fileArray.removeLast()
             if let finalFileName = fileArray.last {
-                //KVNProgress.show()
                 firstSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileName).png", onComplete: nil)
             }
         }
@@ -118,7 +117,6 @@ class EvolutionsViewController: UIViewController {
             fileArray.removeLast()
             if let finalFileName = fileArray.last {
                 fourthSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileName).png") { _ in
-                    //KVNProgress.dismiss()
                     self.fifthSpecieImage.image = self.fourthSpecieImage.image
                 }
             }
