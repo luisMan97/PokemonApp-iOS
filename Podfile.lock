@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.2.0)
+  - KVNProgress (2.3.5)
+  - ObjectMapper (3.4.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.2.0)
+  - KVNProgress
+  - ObjectMapper (~> 3.4.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - KVNProgress
+    - ObjectMapper
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  KVNProgress: d7046cce142f1aeb740db39dc3cacfe910fac354
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+
+PODFILE CHECKSUM: 19bd67b49a34a2dfd756cda46f51fba88501a11f
+
+COCOAPODS: 1.9.1

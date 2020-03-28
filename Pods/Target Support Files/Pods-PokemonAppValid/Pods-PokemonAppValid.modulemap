@@ -1,0 +1,6 @@
+framework module Pods_PokemonAppValid {
+  umbrella header "Pods-PokemonAppValid-umbrella.h"
+
+  export *
+  module * { export * }
+}

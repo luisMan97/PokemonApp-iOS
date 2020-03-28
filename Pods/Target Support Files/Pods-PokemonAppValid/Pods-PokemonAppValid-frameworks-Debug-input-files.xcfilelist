@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-PokemonAppValid/Pods-PokemonAppValid-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
