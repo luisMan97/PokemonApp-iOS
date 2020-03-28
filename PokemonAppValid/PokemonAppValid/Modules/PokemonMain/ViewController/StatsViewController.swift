@@ -13,7 +13,6 @@ class StatsViewController: UIViewController {
 
     @IBOutlet weak var statsTableView: UITableView! {
         didSet {
-            //usersTableView.register(MovesTableViewCell.nib, forCellReuseIdentifier: "cell")
             statsTableView.tableFooterView = UIView()
         }
     }
