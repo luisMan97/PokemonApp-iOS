@@ -21,7 +21,6 @@ extension MovesViewController: UITableViewDataSource {
        
         cell.selectionStyle = .none
         cell.textLabel?.text = viewModel.moves?[indexPath.row].move?.name
-        //cell.detailTextLabel?.text = viewModel.moves?.move[indexPath.row]?.
 
         return cell
     }
