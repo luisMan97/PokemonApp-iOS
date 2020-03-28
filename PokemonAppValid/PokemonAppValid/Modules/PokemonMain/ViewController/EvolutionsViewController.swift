@@ -11,7 +11,6 @@ import KVNProgress
 
 class EvolutionsViewController: UIViewController {
     
-    //@IBOutlet weak var containerView: UIView!
     @IBOutlet weak var firstSpecieLabel: UILabel!
     @IBOutlet weak var secondSpecieLabel: UILabel!
     @IBOutlet weak var thirdSpecieLabel: UILabel!
