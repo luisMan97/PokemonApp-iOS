@@ -13,7 +13,6 @@ class MovesViewController: UIViewController {
 
     @IBOutlet weak var movesTableView: UITableView! {
         didSet {
-            //usersTableView.register(MovesTableViewCell.nib, forCellReuseIdentifier: "cell")
             movesTableView.tableFooterView = UIView()
         }
     }
