@@ -17,7 +17,6 @@ class PokemonsViewModel {
     
     private var listOfNames = [""]
     
-
     // Internal Private Properties
     private let apiManager = ApiManager()
 
@@ -97,7 +96,6 @@ class PokemonsViewModel {
                     let pokemon = Pokemon(JSON: jsonResult) {
                     strongSelf.pokemons.append(pokemon)
                     strongSelf.originalPokemonsList.append(pokemon)
-                    //strongSelf.getImageForEachPokemon(handler: handler)
                     handler?(true, nil)
                 } else {
                     handler?(nil, nil)
