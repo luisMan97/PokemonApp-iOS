@@ -752,10 +752,13 @@
                         <outlet property="lvOneLabel" destination="RM9-wA-SW2" id="6vz-8y-YQh"/>
                         <outlet property="lvTwoLabel" destination="CMq-r9-ofk" id="d2p-K6-GBk"/>
                         <outlet property="megaStoneLabel" destination="xPm-1S-7gs" id="xSp-FA-wWy"/>
+                        <outlet property="secondRow" destination="CkM-0f-1Sb" id="rWI-KZ-fdk"/>
                         <outlet property="secondSpecieImage" destination="OnY-uP-rVv" id="pNa-uw-J3t"/>
                         <outlet property="secondSpecieLabel" destination="15B-bm-dTZ" id="oa7-MO-UaV"/>
+                        <outlet property="secondStackView" destination="beX-0h-VQJ" id="mMh-SE-G3g"/>
                         <outlet property="sixthSpecieImage" destination="BoG-jj-MjE" id="kjx-aj-Rpd"/>
                         <outlet property="sixthSpecieLabel" destination="Dob-Re-qPG" id="w9Q-ni-4vN"/>
+                        <outlet property="stackViewContainerLayoutConstraint" destination="3bd-aw-SsI" id="KHt-z5-I8i"/>
                         <outlet property="thirdSpecieImage" destination="hVe-IP-jIV" id="xi4-0h-czA"/>
                         <outlet property="thirdSpecieLabel" destination="fet-go-S0T" id="NJH-m7-5Px"/>
                     </connections>

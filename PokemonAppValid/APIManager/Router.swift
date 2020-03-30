@@ -43,7 +43,7 @@ enum Router: URLRequestConvertible {
     var path: String {
         switch self {
         case .Pokemons:
-            return "pokemon?limit=151"
+            return "pokemon?limit=25"
         case .Pokemon(let parameters):
             let name = parameters["name"] as? String ?? ""
             return "pokemon/\(name)"

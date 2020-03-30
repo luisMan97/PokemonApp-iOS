@@ -13,21 +13,33 @@ class EvolutionsViewController: UIViewController {
     
     @IBOutlet weak var firstSpecieLabel: UILabel!
     @IBOutlet weak var secondSpecieLabel: UILabel!
+    
     @IBOutlet weak var thirdSpecieLabel: UILabel!
     @IBOutlet weak var fourthSpecieLabel: UILabel!
+    
     @IBOutlet weak var fifthSpecieLabel: UILabel!
     @IBOutlet weak var sixthSpecieLabel: UILabel!
+    
     @IBOutlet weak var firstSpecieImage: UIImageView!
     @IBOutlet weak var secondSpecieImage: UIImageView!
+    
     @IBOutlet weak var thirdSpecieImage: UIImageView!
     @IBOutlet weak var fourthSpecieImage: UIImageView!
+    
     @IBOutlet weak var fifthSpecieImage: UIImageView!
     @IBOutlet weak var sixthSpecieImage: UIImageView!
+    
     @IBOutlet weak var lvOneLabel: UILabel!
     @IBOutlet weak var lvTwoLabel: UILabel!
-    @IBOutlet weak var lastStackView: UIStackView!
     @IBOutlet weak var megaStoneLabel: UILabel!
+    
+    @IBOutlet weak var secondRow: UIImageView!
     @IBOutlet weak var lastRow: UIImageView!
+    
+    @IBOutlet weak var secondStackView: UIStackView!
+    @IBOutlet weak var lastStackView: UIStackView!
+    
+    @IBOutlet weak var stackViewContainerLayoutConstraint: NSLayoutConstraint!
     
     let viewModel = EvolutionsViewModel()
     
@@ -58,29 +70,49 @@ class EvolutionsViewController: UIViewController {
     }
     
     private func updateUI() {
-        firstSpecieLabel.text = viewModel.evolutionChainDetail?.chain?.species?.name
-        secondSpecieLabel.text = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.species?.name
+        let firstName = viewModel.evolutionChainDetail?.chain?.species?.name
+        let secondName = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.species?.name
+        let fourthName = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.species?.name
+        let sixthName = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.envolvesTo?.first?.species?.name
         
-        lvOneLabel.text = "Lv. \(viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.evolutionsDetails?.first?.minLevel ?? 0)"
+        let levelOne = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.evolutionsDetails?.first?.minLevel ?? 0
+        let levelTwo = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.evolutionsDetails?.first?.minLevel ?? 0
         
-        thirdSpecieLabel.text = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.species?.name
-        fourthSpecieLabel.text = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.species?.name
+        firstSpecieLabel.text = firstName
+        secondSpecieLabel.text = secondName
         
-        lvTwoLabel.text = "Lv. \(viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.evolutionsDetails?.first?.minLevel ?? 0)"
+        lvOneLabel.text = "Lv. \(levelOne)"
         
-        if let name = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.envolvesTo?.first?.species?.name {
+        thirdSpecieLabel.text = secondSpecieLabel.text
+        fourthSpecieLabel.text = fourthName
+        
+        lvTwoLabel.text = "Lv. \(levelTwo)"
+        
+        fifthSpecieLabel.text = fourthSpecieLabel.text
+        sixthSpecieLabel.text = sixthName
+        
+        if sixthName != nil {
             megaStoneLabel.isHidden = false
             lastRow.isHidden = false
-            fifthSpecieLabel.isHidden = false
-            sixthSpecieLabel.isHidden = false
-            fifthSpecieLabel.text = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.species?.name
-            sixthSpecieLabel.text = name
+            lastStackView.isHidden = false
+            stackViewContainerLayoutConstraint.constant = 607
         } else {
             megaStoneLabel.isHidden = true
             lastRow.isHidden = true
-            fifthSpecieLabel.isHidden = true
-            sixthSpecieLabel.isHidden = true
-            fifthSpecieImage.isHidden = true
+            lastStackView.isHidden = true
+            stackViewContainerLayoutConstraint.constant = 419
+        }
+        
+        if fourthName != nil {
+            lvTwoLabel.isHidden = false
+            secondRow.isHidden = false
+            secondStackView.isHidden = false
+            stackViewContainerLayoutConstraint.constant = 419
+        } else {
+            lvTwoLabel.isHidden = true
+            secondRow.isHidden = true
+            secondStackView.isHidden = true
+            stackViewContainerLayoutConstraint.constant = 231
         }
         
         if let url = viewModel.evolutionChainDetail?.chain?.species?.url {
