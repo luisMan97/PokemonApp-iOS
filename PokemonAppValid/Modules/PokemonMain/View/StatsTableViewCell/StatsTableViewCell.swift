@@ -12,7 +12,12 @@ class StatsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var statLabel: UILabel!
     @IBOutlet weak var baseStatLAbel: UILabel!
-    @IBOutlet weak var baseStatProgressView: UIProgressView!
+    @IBOutlet weak var baseStatProgressView: UIProgressView! {
+        didSet {
+            baseStatProgressView.transform = CGAffineTransform(scaleX: 1, y: 4)
+            baseStatProgressView.roundSides()
+        }
+    }
     
     var stat: Stat? {
         didSet {
