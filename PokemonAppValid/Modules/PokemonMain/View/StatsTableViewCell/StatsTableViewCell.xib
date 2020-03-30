@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StatsTableViewCell" customModule="PokemonAppValid" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynr-rh-J1r">
+                        <rect key="frame" x="16" y="14.5" width="91" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="91" id="aqc-dH-wdU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.33725490196078434" green="0.61960784313725492" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="amO-Yl-XYc">
+                        <rect key="frame" x="153" y="21" width="151" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="PwP-7T-Cv1"/>
+                        </constraints>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9U-gi-0fE">
+                        <rect key="frame" x="115" y="13.5" width="30" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="uje-bz-c01"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="amO-Yl-XYc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4bB-yB-4g1"/>
+                    <constraint firstItem="amO-Yl-XYc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KaT-bo-WA9"/>
+                    <constraint firstItem="ynr-rh-J1r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Qla-U7-PJ5"/>
+                    <constraint firstItem="ynr-rh-J1r" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xbl-vu-UCa"/>
+                    <constraint firstItem="amO-Yl-XYc" firstAttribute="leading" secondItem="a9U-gi-0fE" secondAttribute="trailing" constant="8" id="fin-fI-TcG"/>
+                    <constraint firstItem="a9U-gi-0fE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jVh-p9-eXG"/>
+                    <constraint firstItem="a9U-gi-0fE" firstAttribute="leading" secondItem="ynr-rh-J1r" secondAttribute="trailing" constant="8" id="lwe-zh-9jJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="baseStatLAbel" destination="a9U-gi-0fE" id="Lbh-Wg-enx"/>
+                <outlet property="baseStatProgressView" destination="amO-Yl-XYc" id="nul-Hx-uj0"/>
+                <outlet property="statLabel" destination="ynr-rh-J1r" id="bcM-j8-yxn"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="142.1289355322339"/>
+        </tableViewCell>
+    </objects>
+</document>
