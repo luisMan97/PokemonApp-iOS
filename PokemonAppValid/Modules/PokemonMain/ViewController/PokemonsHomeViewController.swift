@@ -19,7 +19,6 @@ class PokemonsHomeViewController: UIViewController {
     }
     @IBOutlet weak var pokemonsTableView: UITableView! {
         didSet {
-            pokemonsTableView.rowHeight = 74.5
             pokemonsTableView.register(PokemonTableViewCell.nib, forCellReuseIdentifier: "cell")
             pokemonsTableView.tableFooterView = UIView()
         }
@@ -30,6 +29,11 @@ class PokemonsHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pokemonsTableView.rowHeight = pokemonsTableView.frame.height / 3
     }
     
     override func viewWillDisappear(_ animated: Bool) {

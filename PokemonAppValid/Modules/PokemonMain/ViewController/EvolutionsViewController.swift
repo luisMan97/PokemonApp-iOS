@@ -118,17 +118,28 @@ class EvolutionsViewController: UIViewController {
         if let url = viewModel.evolutionChainDetail?.chain?.species?.url {
             var fileArray = url.components(separatedBy: "/")
             fileArray.removeLast()
-            if let finalFileName = fileArray.last {
-                firstSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileName).png", onComplete: nil)
+            if let finalFileId = fileArray.last {
+                if viewModel.pokemon?.name == firstName,
+                    let image = viewModel.pokemon?.image {
+                    firstSpecieImage.image = UIImage(data: image)
+                } else {
+                    firstSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileId).png", onComplete: nil)
+                }
             }
         }
         
         if let url = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.species?.url {
             var fileArray = url.components(separatedBy: "/")
             fileArray.removeLast()
-            if let finalFileName = fileArray.last {
-                secondSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileName).png") { _ in
-                    self.thirdSpecieImage.image = self.secondSpecieImage.image
+            if let finalFileId = fileArray.last {
+                if viewModel.pokemon?.name == secondName,
+                    let image = viewModel.pokemon?.image {
+                    secondSpecieImage.image = UIImage(data: image)
+                    thirdSpecieImage.image = secondSpecieImage.image
+                } else {
+                    secondSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileId).png") { _ in
+                        self.thirdSpecieImage.image = self.secondSpecieImage.image
+                    }
                 }
             }
         }
@@ -136,10 +147,17 @@ class EvolutionsViewController: UIViewController {
         if let url = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.species?.url {
             var fileArray = url.components(separatedBy: "/")
             fileArray.removeLast()
-            if let finalFileName = fileArray.last {
-                fourthSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileName).png") { _ in
+            if let finalFileId = fileArray.last {
+                if viewModel.pokemon?.name == fourthName,
+                    let image = viewModel.pokemon?.image {
                     KVNProgress.dismiss()
-                    self.fifthSpecieImage.image = self.fourthSpecieImage.image
+                    fourthSpecieImage.image = UIImage(data: image)
+                    fifthSpecieImage.image = fourthSpecieImage.image
+                } else {
+                    fourthSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileId).png") { _ in
+                        KVNProgress.dismiss()
+                        self.fifthSpecieImage.image = self.fourthSpecieImage.image
+                    }
                 }
             } else {
                 KVNProgress.dismiss()
@@ -152,8 +170,13 @@ class EvolutionsViewController: UIViewController {
         if let url = viewModel.evolutionChainDetail?.chain?.envolvesTo?.first?.envolvesTo?.first?.envolvesTo?.first?.species?.url {
             var fileArray = url.components(separatedBy: "/")
             fileArray.removeLast()
-            if let finalFileName = fileArray.last {
-                fourthSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileName).png", onComplete: nil)
+            if let finalFileId = fileArray.last {
+                if viewModel.pokemon?.name == sixthName,
+                    let image = viewModel.pokemon?.image {
+                    sixthSpecieImage.image = UIImage(data: image)
+                } else {
+                    sixthSpecieImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(finalFileId).png", onComplete: nil)
+                }
             }
         }
         

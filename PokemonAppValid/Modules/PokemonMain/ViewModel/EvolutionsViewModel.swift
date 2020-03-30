@@ -9,7 +9,7 @@
 class EvolutionsViewModel {
 
     // Internal Properties
-    var id: Int?
+    var pokemon: Pokemon?
     
     var evolutionChainDetail: EvolutionChainDetail? {
         return manager.evolutionChainDetail
@@ -18,7 +18,7 @@ class EvolutionsViewModel {
     private var manager = EvolutionsManager()
 
     func getPokemonSpecies(handler: CallServiceHandler) {
-        manager.getPokemonSpecies(id: id, handler: handler)
+        manager.getPokemonSpecies(id: pokemon?.id, handler: handler)
     }
 
 }

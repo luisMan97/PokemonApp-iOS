@@ -183,7 +183,6 @@
 			children = (
 				384B1035242EF4F60028FD23 /* Enums */,
 				384B1038242EF4F60028FD23 /* Extensions */,
-				384B1040242EF4F60028FD23 /* Helpers */,
 				384B103F242EF4F60028FD23 /* Globals.swift */,
 			);
 			path = Utils;
@@ -208,13 +207,6 @@
 				384B103E242EF4F60028FD23 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		384B1040242EF4F60028FD23 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		384B1041242EF4F60028FD23 /* APIManager */ = {

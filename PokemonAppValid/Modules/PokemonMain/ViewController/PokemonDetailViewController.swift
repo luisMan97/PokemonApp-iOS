@@ -35,7 +35,13 @@ class PokemonDetailViewController: UIViewController {
         }
     }
     @IBOutlet weak var efecctAbilitiesLabel: UILabel!
-    @IBOutlet weak var pokemonImage: UIImageView!
+    @IBOutlet weak var pokemonImage: UIImageView! {
+        didSet {
+            if let image = viewModel.pokemon?.image {
+                pokemonImage.image = UIImage(data: image)
+            }
+        }
+    }
     @IBOutlet var animationsButtons: [UIButton]! {
         didSet {
             animationsButtons.first?.setTitleColor(.white, for: .normal)
@@ -99,17 +105,21 @@ class PokemonDetailViewController: UIViewController {
     }
     
     private func getImage() {
-        KVNProgress.show()
-        if let id = viewModel.pokemon?.id {
-            pokemonImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(id).png") { success in
-                KVNProgress.dismiss()
-                self.getAbilities()
+        if viewModel.pokemon?.image == nil {
+            KVNProgress.show()
+            if let id = viewModel.pokemon?.id {
+                pokemonImage.downloaded(from: "https://pokeres.bastionbot.org/images/pokemon/\(id).png") { success in
+                    KVNProgress.dismiss()
+                    self.getAbilities()
+                }
+            } else if let frontDefault = viewModel.pokemon?.sprite?.frontDefault {
+                pokemonImage.downloaded(from: frontDefault) { success in
+                    KVNProgress.dismiss()
+                    self.getAbilities()
+                }
             }
-        } else if let frontDefault = viewModel.pokemon?.sprite?.frontDefault {
-            pokemonImage.downloaded(from: frontDefault) { success in
-                KVNProgress.dismiss()
-                self.getAbilities()
-            }
+        } else {
+            getAbilities()
         }
     }
 
@@ -146,7 +156,7 @@ class PokemonDetailViewController: UIViewController {
             return
         }
         
-        evolutionsViewController?.viewModel.id = viewModel.pokemon?.id
+        evolutionsViewController?.viewModel.pokemon = viewModel.pokemon
         
         activeViewController = evolutionsViewController
     }
@@ -162,7 +172,9 @@ class PokemonDetailViewController: UIViewController {
     }
 
     private func getAbilities() {
+        KVNProgress.show()
         viewModel.getAbilities() { [weak self] (success, error) in
+            KVNProgress.dismiss()
             guard let strongSelf = self else { return }
             
             if let error = error {

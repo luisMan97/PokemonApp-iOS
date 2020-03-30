@@ -20,9 +20,11 @@ extension PokemonsHomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PokemonTableViewCell else {
             return UITableViewCell()
         }
-       
-        cell.viewModel = PokemonCellViewModel(pokemon: viewModel.pokemons[indexPath.row])
-
+        
+        if let pokemon = viewModel.pokemon(at: (indexPath as NSIndexPath).row) {
+            cell.viewModel = PokemonCellViewModel(pokemon: pokemon)
+        }
+        
         return cell
     }
     

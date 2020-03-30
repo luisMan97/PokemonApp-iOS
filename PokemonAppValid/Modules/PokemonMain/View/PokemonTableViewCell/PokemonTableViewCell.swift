@@ -14,8 +14,8 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var pokemonNameLabel: UILabel!
     @IBOutlet weak var pokemonIDLabel: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
-    
-    //var tapViewPostsAction : ((UITableViewCell) -> ())?
+    @IBOutlet weak var pokemonImageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var pokemonImageWidhtConstraint: NSLayoutConstraint!
     
     // Observers Internal Properties
     var viewModel: PokemonCellViewModel! {
@@ -29,6 +29,10 @@ class PokemonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        DispatchQueue.main.async {
+            self.pokemonImageHeightConstraint.constant = self.bounds.height - 21.5
+            self.pokemonImageWidhtConstraint.constant = self.pokemonImageHeightConstraint.constant
+        }
     }
     
     // MARK: - Private Methods

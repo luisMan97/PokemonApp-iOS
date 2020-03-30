@@ -43,24 +43,24 @@
                                     <constraint firstAttribute="width" secondItem="l32-wX-4ZI" secondAttribute="height" multiplier="375:667" id="Lnv-ph-58r"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5a-FG-jLP">
-                                <rect key="frame" x="162.5" y="84" width="50.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5a-FG-jLP">
+                                <rect key="frame" x="166.5" y="84" width="42.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-kG-yFV">
-                                <rect key="frame" x="0.0" y="125" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="YEK-Gj-bsF"/>
+                                    <constraint firstAttribute="height" constant="64" id="YEK-Gj-bsF"/>
                                 </constraints>
                                 <color key="barTintColor" red="0.8862745098" green="0.95686274510000002" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYd-Q1-EF1">
-                                <rect key="frame" x="0.0" y="125" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrar pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRw-bL-I6T">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRw-bL-I6T">
                                         <rect key="frame" x="20" y="8" width="335" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Bxm-vM-n3t"/>
@@ -89,7 +89,7 @@
                                     <constraint firstItem="PRw-bL-I6T" firstAttribute="top" secondItem="IYd-Q1-EF1" secondAttribute="top" constant="8" id="3cX-TC-tQK"/>
                                     <constraint firstAttribute="trailing" secondItem="PRw-bL-I6T" secondAttribute="trailing" constant="20" id="4dU-g0-K9e"/>
                                     <constraint firstItem="p0E-ku-8s1" firstAttribute="leading" secondItem="IYd-Q1-EF1" secondAttribute="leading" constant="20" id="b0e-sS-leZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="rIH-6C-lAz" secondAttribute="bottom" id="oEO-eN-Xs5"/>
+                                    <constraint firstAttribute="bottom" secondItem="rIH-6C-lAz" secondAttribute="bottom" constant="8" id="oEO-eN-Xs5"/>
                                     <constraint firstItem="PRw-bL-I6T" firstAttribute="leading" secondItem="IYd-Q1-EF1" secondAttribute="leading" constant="20" id="ohZ-Xa-IAi"/>
                                     <constraint firstAttribute="trailing" secondItem="rIH-6C-lAz" secondAttribute="trailing" constant="20" id="tW2-EB-2cp"/>
                                     <constraint firstItem="rIH-6C-lAz" firstAttribute="leading" secondItem="IYd-Q1-EF1" secondAttribute="leading" constant="20" id="uyO-qi-iwB"/>
@@ -97,7 +97,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tij-BY-x23">
-                                <rect key="frame" x="0.0" y="181" width="375" height="486"/>
+                                <rect key="frame" x="0.0" y="189" width="375" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="9Qb-3N-fjt">

@@ -35,6 +35,11 @@ class PokemonsViewModel {
         manager.getPokemons(handler: handler)
     }
     
+    func pokemon(at index: Int) -> Pokemon? {
+        guard index >= 0 && index < numberOfPokemons else { return nil }
+        return pokemons[index]
+    }
+    
     func search(text: String?) {
         pokemons.removeAll()
         if text?.count != 0 {
